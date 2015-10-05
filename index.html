@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Shopping List</title>
+	<link href='https://fonts.googleapis.com/css?family=Oswald:400,300' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Gravitas+One' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="background-img">
+			<div class="row">
+				<div class="food list">
+					<h1>~Shopping List~</h1>
+					<input type="text" id="text-input" placeholder="Enter Item">  <input type="button" class="button" id="add-button" value="Add">
+					<h4>Drag items to rearrange</h4>
+					<ul class="unchecked">
+						<li><input type="checkbox"> Chicken <input type="button" class="button" value="Edit"> <input type="button" class="button" value="Remove"></li>
+						<li><input type="checkbox"> Bread <input type="button" class="button" value="Edit"> <input type="button" class="button" value="Remove"></li>
+						<li><input type="checkbox"> Kimchii <input type="button" class="button" value="Edit"> <input type="button" class="button" value="Remove"></li>
+					</ul>
+					<hr>
+					<ul class="checked">
+						<li><input type="checkbox"> <strike>Rice</strike> <input type="button" class="button" value="Edit"> <input type="button" class="button" value="Remove"></li>
+						<li><input type="checkbox"> <strike>Noodles</strike> <input type="button" class="button" value="Edit"> <input type="button" class="button" value="Remove"></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
