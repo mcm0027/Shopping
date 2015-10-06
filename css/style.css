@@ -27,6 +27,17 @@ body {
 	border: 4px solid #eee;
 }
 
+p {
+	display: inline-block;
+}
+
+.strike {
+	text-decoration: line-through;
+}
+
+.unstrike {
+	text-decoration: none;
+}
 .unchecked,
 .checked {
 	font-family: 'Gravitas One', cursive;

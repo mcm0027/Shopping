@@ -6,7 +6,12 @@
 	<link href='https://fonts.googleapis.com/css?family=Oswald:400,300' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Gravitas+One' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" href="js/jquery-ui-1.11.4/jquery-ui.min.css">
+ 	<link rel="stylesheet" href="js/jquery-ui-1.11.4/jquery-ui.theme.min.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script src="https://code.jquery.com/jquery.min.js"></script>
+ 	<script src="js/jquery-ui-1.11.4/jquery-ui.min.js"></script>
+ 	<script src="js/app.js"></script>
 </head>
 <body>
 	<div class="container-fluid">
@@ -17,14 +22,14 @@
 					<input type="text" id="text-input" placeholder="Enter Item">  <input type="button" class="button" id="add-button" value="Add">
 					<h4>Drag items to rearrange</h4>
 					<ul class="unchecked">
-						<li><input type="checkbox"> Chicken <input type="button" class="button" value="Edit"> <input type="button" class="button" value="Remove"></li>
-						<li><input type="checkbox"> Bread <input type="button" class="button" value="Edit"> <input type="button" class="button" value="Remove"></li>
-						<li><input type="checkbox"> Kimchii <input type="button" class="button" value="Edit"> <input type="button" class="button" value="Remove"></li>
+						<li><input type="checkbox" class="list-checkbox"> <p class="unstrike"> Chicken </p> <input type="button" class="button" value="Edit"> <input type="button" class="button" value="Remove"></li>
+						<li><input type="checkbox" class="list-checkbox"> <p class="unstrike"> Bread </p> <input type="button" class="button" value="Edit"> <input type="button" class="button" value="Remove"></li>
+						<li><input type="checkbox" class="list-checkbox"> <p class="unstrike"> Kimchi </p> <input type="button" class="button" value="Edit"> <input type="button" class="button" value="Remove"></li>
 					</ul>
 					<hr>
 					<ul class="checked">
-						<li><input type="checkbox"> <strike>Rice</strike> <input type="button" class="button" value="Edit"> <input type="button" class="button" value="Remove"></li>
-						<li><input type="checkbox"> <strike>Noodles</strike> <input type="button" class="button" value="Edit"> <input type="button" class="button" value="Remove"></li>
+						<li><input type="checkbox" class="list-checkbox" checked> <p class="strike"> Rice </p> <input type="button" class="button" value="Edit"> <input type="button" class="button" value="Remove"></li>
+						<li><input type="checkbox" class="list-checkbox" checked> <p class="strike"> Noodles </p> <input type="button" class="button" value="Edit"> <input type="button" class="button" value="Remove"></li>
 					</ul>
 				</div>
 			</div>
