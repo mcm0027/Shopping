@@ -22,7 +22,7 @@ body {
 .list {
 	text-align: center;
 	width: 60%;
-	margin: 10% 20%;
+	margin: 10% 20% 40% 20%;
 	border-radius: 10px;
 	border: 4px solid #eee;
 }
@@ -38,6 +38,17 @@ p {
 .unstrike {
 	text-decoration: none;
 }
+
+.editinput {
+	display:inline-block;
+	width: 65%;
+	border-radius: 5px;
+	background-color: #F2F9FC;
+	font-size: .8em;
+	margin: 5px 0;
+	padding: 1px;
+}
+
 .unchecked,
 .checked {
 	font-family: 'Gravitas One', cursive;
@@ -62,8 +73,17 @@ p {
 	background-color: #F2F9FC;
 }
 
+.addbutton {
+	margin: 10px 0;
+}
+
 #add-button {
 	float: none;
+}
+
+#clear-button {
+	float: none;
+	margin: 0;
 }
 
 
@@ -92,7 +112,7 @@ Responsive
 @media only screen and (max-width: 750px) {
 	.list {
 		width: 80%;
-		margin: 20% 10%;
+		margin: 20% 10% 80% 10%;
 	}
 
 	.unchecked,
@@ -108,7 +128,7 @@ Responsive
 @media only screen and (max-width: 500px) {
 	.list {
 		width: 90%;
-		margin: 25% 5%;
+		margin: 25% 5% 80% 5%;
 	}
 
 	.unchecked,
@@ -124,7 +144,7 @@ Responsive
 @media only screen and (max-width: 420px) {
 	.list {
 		width: 92%;
-		margin: 25% 4%;
+		margin: 35% 4% 100% 4%;
 	}
 
 	.unchecked,
