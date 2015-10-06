@@ -10,6 +10,10 @@ body {
 	margin:0;
 }
 
+p {
+	display: inline-block;
+}
+
 .background-img {
 	background-image: url("../img/kitchen2.jpg");
 	background-size: cover;
@@ -59,6 +63,13 @@ p {
 	letter-spacing: .1em;
 }
 
+.unstrike {
+	text-decoration: none;
+}
+
+.strike {
+	text-decoration: line-through;
+}
 .button {
 	border-radius: 10px;
 	border: 2px solid #eee;
