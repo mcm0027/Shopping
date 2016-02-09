@@ -18,7 +18,7 @@
 			<div class="row">
 				<div class="food list">
 					<h1>~Shopping List~</h1>
-					<input type="text" id="text-input" ng-model="newItem" placeholder="Enter Item">  <input ng-click="addItem(newItem)" type="button" class="button" id="add-button" value="Add"> <input type="button" class="button" id="clear-button" value="Clear List">
+					<input type="text" id="text-input" ng-model="newItem" placeholder="Enter Item">  <button ng-click="addItem(newItem)" class="button" id="add-button">Add</button> <input type="button" class="button" id="clear-button" value="Clear List">
 					<h4>Drag items to rearrange</h4>
 					<ul ui-sortable ng-model="items" class="unchecked">
 						<li ng-repeat="item in items" ng-if="item.checked === false" ><input type="checkbox" class="list-checkbox"> <p class="unstrike"> {{item.name}} </p> <input type="button" class="button edit" value="Edit"> <input type="button" class="button remove" value="Remove"></li>

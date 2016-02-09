@@ -30,7 +30,9 @@ myApp.factory('items', function() {
 
 myApp.controller('listController', ['$scope', 'items', function($scope, items) {
   $scope.items = items.set();
-  $scope.addItem = items.addItem($scope.newItem);
+  $scope.addItem = function(newItem) {
+    items.addItem(newItem);
+  };
 }]);
 
 // function enterKeydown(elementClass, deleteInput) {
