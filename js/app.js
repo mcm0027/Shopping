@@ -1,14 +1,37 @@
 var myApp = angular.module("myApp", ['ui.sortable']);
 
-myApp.factory('uncheckedItems', [ function(
-  
+myApp.factory('items', function() {
+  var items = {};
 
-)]);
+  items.set = function() {
+    items = [
+      {name: "Chicken",
+       checked: false },
+      {name: "Bread",
+       checked: false },
+      {name: "Kimchi",
+       checked: false },
+      {name: "Rice",
+       checked: true },
+      {name: "Noodles",
+       checked: true },
+      {name: "Pasta",
+       checked: true }
+    ];
+    return items;
+  };
 
-myApp.controller('listController', function() {
-
-
+  items.addItem = function(newItem) {
+    items.push({name: newItem, checked: false});
+    return items;
+  };
+  return items;
 });
+
+myApp.controller('listController', ['$scope', 'items', function($scope, items) {
+  $scope.items = items.set();
+  $scope.addItem = items.addItem($scope.newItem);
+}]);
 
 // function enterKeydown(elementClass, deleteInput) {
 // 	$(document).keydown(function(e){
@@ -30,10 +53,10 @@ myApp.controller('listController', function() {
 
 $(document).ready(function() {
 
-	$("#add-button").click(function() {
-		$(".unchecked").append('<li><input type="checkbox" class="list-checkbox"> <p class="unstrike">' + $(this).prev().val() + '</p> <input type="button" class="button edit" value="Edit"> <input type="button" class="button remove" value="Remove"></li>');
-		$('#add-button').prev().val('');
-	});
+	// $("#add-button").click(function() {
+	// 	$(".unchecked").append('<li><input type="checkbox" class="list-checkbox"> <p class="unstrike">' + $(this).prev().val() + '</p> <input type="button" class="button edit" value="Edit"> <input type="button" class="button remove" value="Remove"></li>');
+	// 	$('#add-button').prev().val('');
+	// });
 
 	$("#clear-button").click(function() {
 		$("ul").children().remove();
@@ -91,6 +114,6 @@ $(document).ready(function() {
 
 		});
 
-		enterKeydown(".editinput", true);
+//		enterKeydown(".editinput", true);
 	});
 
