@@ -18,14 +18,14 @@
 			<div class="row">
 				<div class="food list">
 					<h1>~Shopping List~</h1>
-					<input type="text" id="text-input" ng-model="newItem" placeholder="Enter Item">  <button ng-click="addItem(newItem)" class="button" id="add-button">Add</button> <input type="button" class="button" id="clear-button" value="Clear List">
+					<input type="text" id="text-input" ng-model="newItem" placeholder="Enter Item" ng-keypress="enterEvent($event, newItem)">  <button ng-click="addItem(newItem)" class="button" id="add-button">Add</button> <button ng-click="clear()" class="button" id="clear-button">Clear List</button>
 					<h4>Drag items to rearrange</h4>
 					<ul ui-sortable ng-model="items" class="unchecked">
-						<li ng-repeat="item in items" ng-if="item.checked === false" ><input type="checkbox" class="list-checkbox"> <p class="unstrike"> {{item.name}} </p> <input type="button" class="button edit" value="Edit"> <input type="button" class="button remove" value="Remove"></li>
+						<li ng-repeat="item in items" ng-if="item.checked === false" ><input type="checkbox" ng-click="check(item.name)" class="list-checkbox"> <p class="unstrike"> {{item.name}} </p> <input type="button" class="button edit" value="Edit"> <input type="button" class="button remove" value="Remove"></li>
 					</ul>
 					<hr>
 					<ul ui-sortable ng-model="items" class="checked">
-						<li ng-repeat="item in items" ng-if="item.checked" ><input type="checkbox" class="list-checkbox" checked> <p class="strike"> {{item.name}} </p> <input type="button" class="button edit" value="Edit"> <input type="button" class="button remove" value="Remove"></li>
+						<li ng-repeat="item in items" ng-if="item.checked" ><input type="checkbox" class="list-checkbox" checked ng-click="check(item.name)"> <p class="strike"> {{item.name}} </p> <input type="button" class="button edit" value="Edit"> <input type="button" class="button remove" value="Remove"></li>
 					</ul>
 				</div>
 			</div>
