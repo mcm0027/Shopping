@@ -2,6 +2,13 @@ var myApp = angular.module("myApp", ['ui.sortable']);
 
 myApp.factory('items', function() {
   var items = {};
+  var lookup = function(itemName){
+    for (var i = 0; i < items.length; i++) {
+      lookup[items[i].name] = items[i];
+    }
+    console.log(lookup[itemName]);
+    return lookup[itemName];
+  };
 
   items.set = function() {
     items = [
@@ -32,19 +39,24 @@ myApp.factory('items', function() {
   };
 
   items.toggleCheck = function(itemName) {
-    var lookup = {};
-    for (var i = 0; i < items.length; i++) {
-      lookup[items[i].name] = items[i];
-    }
-    var itemCheck = lookup[itemName];
+    var itemCheck = lookup(itemName);
     if (itemCheck.checked) {
       itemCheck.checked = false;
     } else {
       itemCheck.checked = true;
     }
+    return items;
+  };
+
+  items.destroy = function(id) {
+    // var itemCheck = lookup(itemName);
+    alert(id);
+    items.splice(id, 1);
+    return items;
   };
   return items;
 });
+
 
 myApp.controller('listController', ['$scope', 'items', function($scope, items) {
   $scope.items = items.set();
@@ -63,27 +75,15 @@ myApp.controller('listController', ['$scope', 'items', function($scope, items) {
   };
 
   $scope.check = function(name) {
-      items.toggleCheck(name);
+    items.toggleCheck(name);
   };
+
+  $scope.destroy = function(id) {
+    items.destroy(id);
+  };
+
+  // $scope.remove =
 }]);
-
-// function enterKeydown(elementClass, deleteInput) {
-// 	$(document).keydown(function(e){
-
-// 		if((e.which == 13) && $(elementClass).is(":focus")) {
-// 			$(elementClass).parent().parent().append('<li><input type="checkbox" class="list-checkbox grabcheckbox"> <p class="unstrike grabtext">' + $(elementClass).val() + '</p> <input type="button" class="button edit" value="Edit"> <input type="button" class="button remove" value="Remove"></li>');
-// 			if ($(".addbutton").parent().parent().attr("class") == "checked ui-sortable") {
-// 				$(".grabtext").removeClass("unstrike").addClass("strike");
-// 				$(".grabcheckbox").attr('checked', 'checked');
-// 			}
-// 			$(".grabtext").removeClass("grabtext");
-// 			$(".grabcheckbox").removeClass("grabcheckbox");
-// 			if (deleteInput = true){
-// 				$(elementClass).parent().remove();
-// 			}
-// 		}
-// 	});
-// }
 
 $(document).ready(function() {
 
@@ -117,9 +117,9 @@ $(document).ready(function() {
 	// 		}
 	// 	});
 
-	$("ul").on("click", ".remove", function() {
-		$(this).parent().remove();
-	});
+	// $("ul").on("click", ".remove", function() {
+	// 	$(this).parent().remove();
+	// });
 
 	$("ul").on("click", ".edit", function() {
 		var item = $(this).prev().text();
